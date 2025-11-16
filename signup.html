@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up | Luqmar</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+</head>
+<body class="min-h-screen bg-gradient-to-b from-indigo-900 to-purple-900 text-white">
+    <custom-navbar></custom-navbar>
+    
+    <main class="container mx-auto px-4 py-16">
+        <div class="max-w-2xl mx-auto bg-indigo-900/50 backdrop-blur-md rounded-2xl p-8 border border-indigo-500/20">
+            <div class="text-center mb-8">
+                <h1 class="text-3xl font-bold mb-2">Create Your Cosmic Profile</h1>
+                <p class="text-purple-200">Help us personalize your cycle tracking experience</p>
+            </div>
+
+            <form id="signup-form" class="space-y-6">
+                <!-- Basic Info -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                        <label for="name" class="block mb-2">Full Name</label>
+                        <input type="text" id="name" required class="w-full bg-indigo-800/50 border border-indigo-500/30 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-purple-500">
+                    </div>
+                    <div>
+                        <label for="email" class="block mb-2">Email</label>
+                        <input type="email" id="email" required class="w-full bg-indigo-800/50 border border-indigo-500/30 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-purple-500">
+                    </div>
+                    <div>
+                        <label for="password" class="block mb-2">Password</label>
+                        <input type="password" id="password" required class="w-full bg-indigo-800/50 border border-indigo-500/30 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-purple-500">
+                    </div>
+                    <div>
+                        <label for="gender" class="block mb-2">Gender</label>
+                        <select id="gender" required class="w-full bg-indigo-800/50 border border-indigo-500/30 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-purple-500">
+                            <option value="">Select</option>
+                            <option value="female">Female</option>
+                            <option value="male">Male</option>
+                            <option value="non-binary">Non-binary</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Physical Measurements -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div>
+                        <label for="height" class="block mb-2">Height (cm)</label>
+                        <input type="number" id="height" required class="w-full bg-indigo-800/50 border border-indigo-500/30 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-purple-500">
+                    </div>
+                    <div>
+                        <label for="weight" class="block mb-2">Weight (kg)</label>
+                        <input type="number" id="weight" required class="w-full bg-indigo-800/50 border border-indigo-500/30 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-purple-500">
+                    </div>
+                    <div>
+                        <label for="birth-date" class="block mb-2">Birth Date</label>
+                        <input type="date" id="birth-date" required class="w-full bg-indigo-800/50 border border-indigo-500/30 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-purple-500">
+                    </div>
+                </div>
+
+                <!-- Cycle Information -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                        <label for="cycle-length" class="block mb-2">Average Cycle Length (days)</label>
+                        <input type="number" id="cycle-length" value="28" required class="w-full bg-indigo-800/50 border border-indigo-500/30 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-purple-500">
+                    </div>
+                    <div>
+                        <label for="period-length" class="block mb-2">Average Period Length (days)</label>
+                        <input type="number" id="period-length" value="5" required class="w-full bg-indigo-800/50 border border-indigo-500/30 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-purple-500">
+                    </div>
+                </div>
+
+                <!-- Last Period -->
+                <div>
+                    <label for="last-period" class="block mb-2">Last Period Start Date</label>
+                    <input type="date" id="last-period" required class="w-full bg-indigo-800/50 border border-indigo-500/30 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-purple-500">
+                </div>
+
+                <!-- Health Conditions -->
+                <div>
+                    <label class="block mb-2">Health Conditions (select all that apply)</label>
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
+                        <div class="flex items-center">
+                            <input type="checkbox" id="pcos" class="mr-2 bg-indigo-800/50 border-indigo-500/30 rounded focus:ring-purple-500">
+                            <label for="pcos">PCOS</label>
+                        </div>
+                        <div class="flex items-center">
+                            <input type="checkbox" id="endometriosis" class="mr-2 bg-indigo-800/50 border-indigo-500/30 rounded focus:ring-purple-500">
+                            <label for="endometriosis">Endometriosis</label>
+                        </div>
+                        <div class="flex items-center">
+                            <input type="checkbox" id="fibroids" class="mr-2 bg-indigo-800/50 border-indigo-500/30 rounded focus:ring-purple-500">
+                            <label for="fibroids">Fibroids</label>
+                        </div>
+                        <div class="flex items-center">
+                            <input type="checkbox" id="anemia" class="mr-2 bg-indigo-800/50 border-indigo-500/30 rounded focus:ring-purple-500">
+                            <label for="anemia">Anemia</label>
+                        </div>
+                        <div class="flex items-center">
+                            <input type="checkbox" id="thyroid" class="mr-2 bg-indigo-800/50 border-indigo-500/30 rounded focus:ring-purple-500">
+                            <label for="thyroid">Thyroid Disorder</label>
+                        </div>
+                        <div class="flex items-center">
+                            <input type="checkbox" id="diabetes" class="mr-2 bg-indigo-800/50 border-indigo-500/30 rounded focus:ring-purple-500">
+                            <label for="diabetes">Diabetes</label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Vitamin Deficiencies -->
+                <div>
+                    <label class="block mb-2">Vitamin Deficiencies (select all that apply)</label>
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3">
+                        <div class="flex items-center">
+                            <input type="checkbox" id="iron" class="mr-2 bg-indigo-800/50 border-indigo-500/30 rounded focus:ring-purple-500">
+                            <label for="iron">Iron</label>
+                        </div>
+                        <div class="flex items-center">
+                            <input type="checkbox" id="vitamin-d" class="mr-2 bg-indigo-800/50 border-indigo-500/30 rounded focus:ring-purple-500">
+                            <label for="vitamin-d">Vitamin D</label>
+                        </div>
+                        <div class="flex items-center">
+                            <input type="checkbox" id="vitamin-b12" class="mr-2 bg-indigo-800/50 border-indigo-500/30 rounded focus:ring-purple-500">
+                            <label for="vitamin-b12">Vitamin B12</label>
+                        </div>
+                        <div class="flex items-center">
+                            <input type="checkbox" id="magnesium" class="mr-2 bg-indigo-800/50 border-indigo-500/30 rounded focus:ring-purple-500">
+                            <label for="magnesium">Magnesium</label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Additional Notes -->
+                <div>
+                    <label for="notes" class="block mb-2">Additional Health Notes</label>
+                    <textarea id="notes" rows="3" class="w-full bg-indigo-800/50 border border-indigo-500/30 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-purple-500" placeholder="Any other health information we should know..."></textarea>
+                </div>
+
+                <button type="submit" class="w-full bg-purple-600 hover:bg-purple-700 text-white py-3 px-4 rounded-lg transition font-medium">
+                    Complete Sign Up
+                </button>
+            </form>
+        </div>
+    </main>
+
+    <custom-footer></custom-footer>
+
+    <script src="components/navbar.js"></script>
+    <script src="components/footer.js"></script>
+    <script src="script.js"></script>
+    <script>
+        document.getElementById('signup-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Collect form data
+            const userData = {
+                name: document.getElementById('name').value,
+                email: document.getElementById('email').value,
+                password: document.getElementById('password').value,
+                gender: document.getElementById('gender').value,
+                height: document.getElementById('height').value,
+                weight: document.getElementById('weight').value,
+                birthDate: document.getElementById('birth-date').value,
+                cycleLength: document.getElementById('cycle-length').value,
+                periodLength: document.getElementById('period-length').value,
+                lastPeriod: document.getElementById('last-period').value,
+                conditions: {
+                    pcos: document.getElementById('pcos').checked,
+                    endometriosis: document.getElementById('endometriosis').checked,
+                    fibroids: document.getElementById('fibroids').checked,
+                    anemia: document.getElementById('anemia').checked,
+                    thyroid: document.getElementById('thyroid').checked,
+                    diabetes: document.getElementById('diabetes').checked
+                },
+                deficiencies: {
+                    iron: document.getElementById('iron').checked,
+                    vitaminD: document.getElementById('vitamin-d').checked,
+                    vitaminB12: document.getElementById('vitamin-b12').checked,
+                    magnesium: document.getElementById('magnesium').checked
+                },
+                notes: document.getElementById('notes').value
+            };
+
+            // Store user data
+            localStorage.setItem('luqmarUserData', JSON.stringify(userData));
+            
+            // Redirect to dashboard
+            window.location.href = '/';
+        });
+    </script>
+</body>
+</html>

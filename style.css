@@ -1,0 +1,129 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+body {
+    font-family: 'Space Grotesk', sans-serif;
+    background: linear-gradient(to bottom, #0a0b3d, #242654, #1a1b41);
+}
+
+#vanta-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
+.community-card {
+    background: rgba(36, 38, 84, 0.6);
+    backdrop-filter: blur(10px);
+    border-radius: 16px;
+    padding: 2rem;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(187, 181, 241, 0.3);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    min-height: 200px;
+    position: relative;
+    overflow: hidden;
+}
+.community-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(187, 181, 241, 0.3);
+    border-color: rgba(187, 181, 241, 0.6);
+}
+
+.moon-phase {
+    transition: all 0.5s ease;
+    box-shadow: 0 0 30px rgba(109, 75, 119, 0.5);
+}
+
+.discussion-item {
+    background: rgba(36, 38, 84, 0.3);
+    padding: 1rem;
+    border-radius: 12px;
+    border: 1px solid rgba(187, 181, 241, 0.2);
+    transition: all 0.3s ease;
+}
+.discussion-item:hover {
+    background: rgba(36, 38, 84, 0.5);
+}
+.card-icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(187, 181, 241, 0.2);
+    margin-bottom: 1.5rem;
+    transition: all 0.3s ease;
+}
+.feature-card:hover .card-icon {
+    background: rgba(187, 181, 241, 0.4);
+    transform: scale(1.1);
+}
+/* Community page styles */
+.community-group {
+    transition: all 0.3s ease;
+    display: block;
+}
+
+.community-group:hover {
+    transform: translateY(-3px);
+}
+
+.community-post {
+    background: rgba(36, 38, 84, 0.3);
+    padding: 1rem;
+    border-radius: 12px;
+    border: 1px solid rgba(187, 181, 241, 0.2);
+    transition: all 0.3s ease;
+}
+
+.community-post:hover {
+    background: rgba(36, 38, 84, 0.5);
+}
+
+/* Nutrition page styles */
+.phase-btn.active-phase {
+    transform: scale(1.05);
+    box-shadow: 0 0 0 2px white;
+}
+
+.recipe-card {
+    transition: all 0.3s ease;
+}
+
+.recipe-card:hover {
+    transform: translateY(-5px);
+}
+.feature-card h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: white;
+}
+
+.feature-card p {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #0f0c29;
+}
+::-webkit-scrollbar-thumb {
+    background: #6d4b77;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #8487c6;
+}

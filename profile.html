@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Profile | Luqmar</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.stars.min.js"></script>
+</head>
+<body class="min-h-screen text-white overflow-x-hidden">
+    <div id="vanta-bg"></div>
+    <custom-navbar></custom-navbar>
+    
+    <main class="container mx-auto px-4 py-16 relative z-10">
+        <div class="max-w-3xl mx-auto">
+            <h1 class="text-3xl font-bold mb-8">My Profile</h1>
+            
+            <div class="bg-gradient-to-br from-indigo-900/50 to-purple-900/50 rounded-2xl p-8 backdrop-blur-md border border-indigo-500/20 mb-8">
+                <div class="flex flex-col md:flex-row items-center gap-6 mb-8">
+                    <div class="w-24 h-24 rounded-full bg-purple-500/20 flex items-center justify-center">
+                        <i data-feather="user" class="w-12 h-12"></i>
+                    </div>
+                    <div class="flex-1 text-center md:text-left">
+                        <h2 class="text-2xl font-bold" id="profile-name">Loading...</h2>
+                        <p class="text-purple-200" id="profile-email">Loading...</p>
+                    </div>
+                    <a href="/update-details.html" class="bg-purple-600 hover:bg-purple-700 px-4 py-2 rounded-lg">
+                        Edit Profile
+                    </a>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                        <h3 class="font-semibold mb-2">Basic Information</h3>
+                        <div class="space-y-2">
+                            <p><span class="text-purple-200">Gender:</span> <span id="profile-gender">Loading...</span></p>
+                            <p><span class="text-purple-200">Birth Date:</span> <span id="profile-birthdate">Loading...</span></p>
+                            <p><span class="text-purple-200">Height:</span> <span id="profile-height">Loading...</span> cm</p>
+                            <p><span class="text-purple-200">Weight:</span> <span id="profile-weight">Loading...</span> kg</p>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="font-semibold mb-2">Cycle Information</h3>
+                        <div class="space-y-2">
+                            <p><span class="text-purple-200">Cycle Length:</span> <span id="profile-cycle-length">Loading...</span> days</p>
+                            <p><span class="text-purple-200">Period Length:</span> <span id="profile-period-length">Loading...</span> days</p>
+                            <p><span class="text-purple-200">Last Period:</span> <span id="profile-last-period">Loading...</span></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-gradient-to-br from-indigo-900/50 to-purple-900/50 rounded-2xl p-8 backdrop-blur-md border border-indigo-500/20">
+                <h2 class="text-2xl font-bold mb-6">Health Information</h2>
+                
+                <div class="mb-6">
+                    <h3 class="font-semibold mb-3">Conditions</h3>
+                    <div class="flex flex-wrap gap-2" id="profile-conditions">
+                        <!-- Conditions will be populated by JS -->
+                    </div>
+                </div>
+
+                <div>
+                    <h3 class="font-semibold mb-3">Vitamin Deficiencies</h3>
+                    <div class="flex flex-wrap gap-2" id="profile-deficiencies">
+                        <!-- Deficiencies will be populated by JS -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <custom-footer></custom-footer>
+
+    <script src="components/navbar.js"></script>
+    <script src="components/footer.js"></script>
+    <script src="script.js"></script>
+    <script>
+        feather.replace();
+        VANTA.STARS({
+            el: "#vanta-bg",
+            mouseControls: true,
+            touchControls: true,
+            gyroControls: false,
+            minHeight: 200.00,
+            minWidth: 200.00,
+            scale: 1.00,
+            scaleMobile: 1.00,
+            color: 0x6d4b77,
+            backgroundColor: 0x0
+        });
+
+        // Load profile data
+        document.addEventListener('DOMContentLoaded', function() {
+            const userData = JSON.parse(localStorage.getItem('luqmarUserData'));
+            if (userData) {
+                // Basic info
+                document.getElementById('profile-name').textContent = userData.name || 'Not set';
+                document.getElementById('profile-email').textContent = userData.email || 'Not set';
+                document.getElementById('profile-gender').textContent = userData.gender || 'Not set';
+                document.getElementById('profile-birthdate').textContent = userData.birthDate || 'Not set';
+                document.getElementById('profile-height').textContent = userData.height || 'Not set';
+                document.getElementById('profile-weight').textContent = userData.weight || 'Not set';
+                
+                // Cycle info
+                document.getElementById('profile-cycle-length').textContent = userData.cycleLength || 'Not set';
+                document.getElementById('profile-period-length').textContent = userData.periodLength || 'Not set';
+                document.getElementById('profile-last-period').textContent = userData.lastPeriod || 'Not set';
+
+                // Conditions
+                const conditionsContainer = document.getElementById('profile-conditions');
+                if (userData.conditions) {
+                    for (const [condition, hasCondition] of Object.entries(userData.conditions)) {
+                        if (hasCondition) {
+                            const conditionEl = document.createElement('span');
+                            conditionEl.className = 'bg-indigo-900/40 px-3 py-1 rounded-full text-sm';
+                            conditionEl.textContent = condition;
+                            conditionsContainer.appendChild(conditionEl);
+                        }
+                    }
+                }
+
+                // Deficiencies
+                const deficienciesContainer = document.getElementById('profile-deficiencies');
+                if (userData.deficiencies) {
+                    for (const [deficiency, hasDeficiency] of Object.entries(userData.deficiencies)) {
+                        if (hasDeficiency) {
+                            const deficiencyEl = document.createElement('span');
+                            deficiencyEl.className = 'bg-purple-900/40 px-3 py-1 rounded-full text-sm';
+                            deficiencyEl.textContent = deficiency;
+                            deficienciesContainer.appendChild(deficiencyEl);
+                        }
+                    }
+                }
+            } else {
+                window.location.href = '/signup.html';
+            }
+        });
+    </script>
+</body>
+</html>

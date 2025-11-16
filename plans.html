@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wellness Plans | Luqmar</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.stars.min.js"></script>
+</head>
+<body class="min-h-screen text-white overflow-x-hidden">
+    <div id="vanta-bg"></div>
+    <custom-navbar></custom-navbar>
+    
+    <main class="container mx-auto px-4 py-16 relative z-10">
+        <h1 class="text-4xl font-bold mb-12 text-center">Cosmic Wellness Plans</h1>
+        
+        <!-- Pricing Plans -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+            <!-- Premium Subscription -->
+            <div class="bg-gradient-to-br from-indigo-900/50 to-purple-900/50 rounded-2xl p-8 backdrop-blur-md border border-indigo-500/20 transition-all hover:scale-105">
+                <div class="text-center mb-6">
+                    <h2 class="text-2xl font-bold mb-2">Cosmic Premium</h2>
+                    <p class="text-purple-200 mb-4">Monthly Subscription</p>
+                    <div class="text-4xl font-bold">20 DHS<span class="text-sm font-normal">/month</span></div>
+                </div>
+                <ul class="space-y-3 mb-8">
+                    <li class="flex items-start gap-2">
+                        <i data-feather="check-circle" class="text-green-400 mt-1"></i>
+                        <span>Personalized meal & exercise plans</span>
+                    </li>
+                    <li class="flex items-start gap-2">
+                        <i data-feather="check-circle" class="text-green-400 mt-1"></i>
+                        <span>Exclusive recipes & content</span>
+                    </li>
+                    <li class="flex items-start gap-2">
+                        <i data-feather="check-circle" class="text-green-400 mt-1"></i>
+                        <span>Nutritionist Q&A sessions</span>
+                    </li>
+                    <li class="flex items-start gap-2">
+                        <i data-feather="check-circle" class="text-green-400 mt-1"></i>
+                        <span>Community rewards & badges</span>
+                    </li>
+                    <li class="flex items-start gap-2">
+                        <i data-feather="check-circle" class="text-green-400 mt-1"></i>
+                        <span>Cycle tracking analytics</span>
+                    </li>
+                </ul>
+                <button class="w-full bg-purple-600 hover:bg-purple-700 text-white py-3 px-4 rounded-lg transition font-medium">
+                    Subscribe Now
+                </button>
+            </div>
+
+            <!-- Meal Delivery Plan -->
+            <div class="bg-gradient-to-br from-blue-900/50 to-indigo-900/50 rounded-2xl p-8 backdrop-blur-md border border-blue-500/20 transition-all hover:scale-105 transform">
+                <div class="text-center mb-6">
+                    <div class="absolute top-0 right-0 bg-yellow-500 text-black px-3 py-1 text-xs font-bold rounded-bl-lg rounded-tr-lg">POPULAR</div>
+                    <h2 class="text-2xl font-bold mb-2">Cosmic Nourishment</h2>
+                    <p class="text-blue-200 mb-4">Weekly Meal Delivery</p>
+                    <div class="text-4xl font-bold">400 DHS<span class="text-sm font-normal">/week</span></div>
+                </div>
+                <ul class="space-y-3 mb-8">
+                    <li class="flex items-start gap-2">
+                        <i data-feather="check-circle" class="text-green-400 mt-1"></i>
+                        <span>Personalized meal plans</span>
+                    </li>
+                    <li class="flex items-start gap-2">
+                        <i data-feather="check-circle" class="text-green-400 mt-1"></i>
+                        <span>Fresh meals delivered 4x/week</span>
+                    </li>
+                    <li class="flex items-start gap-2">
+                        <i data-feather="check-circle" class="text-green-400 mt-1"></i>
+                        <span>Phase-specific nutrition</span>
+                    </li>
+                    <li class="flex items-start gap-2">
+                        <i data-feather="check-circle" class="text-green-400 mt-1"></i>
+                        <span>Portion-controlled containers</span>
+                    </li>
+                    <li class="flex items-start gap-2">
+                        <i data-feather="check-circle" class="text-green-400 mt-1"></i>
+                        <span>Nutritional information included</span>
+                    </li>
+                </ul>
+                <button class="w-full bg-blue-600 hover:bg-blue-700 text-white py-3 px-4 rounded-lg transition font-medium">
+                    Get Started
+                </button>
+            </div>
+
+            <!-- Consultation Plan -->
+            <div class="bg-gradient-to-br from-purple-900/50 to-pink-900/50 rounded-2xl p-8 backdrop-blur-md border border-pink-500/20 transition-all hover:scale-105">
+                <div class="text-center mb-6">
+                    <h2 class="text-2xl font-bold mb-2">Cosmic Guidance</h2>
+                    <p class="text-pink-200 mb-4">One-on-One Session</p>
+                    <div class="text-4xl font-bold">50 DHS<span class="text-sm font-normal">/session</span></div>
+                </div>
+                <ul class="space-y-3 mb-8">
+                    <li class="flex items-start gap-2">
+                        <i data-feather="check-circle" class="text-green-400 mt-1"></i>
+                        <span>60-minute private consultation</span>
+                    </li>
+                    <li class="flex items-start gap-2">
+                        <i data-feather="check-circle" class="text-green-400 mt-1"></i>
+                        <span>Personalized cycle analysis</span>
+                    </li>
+                    <li class="flex items-start gap-2">
+                        <i data-feather="check-circle" class="text-green-400 mt-1"></i>
+                        <span>Symptom management strategies</span>
+                    </li>
+                    <li class="flex items-start gap-2">
+                        <i data-feather="check-circle" class="text-green-400 mt-1"></i>
+                        <span>Custom supplement recommendations</span>
+                    </li>
+                    <li class="flex items-start gap-2">
+                        <i data-feather="check-circle" class="text-green-400 mt-1"></i>
+                        <span>Follow-up email support</span>
+                    </li>
+                </ul>
+                <button class="w-full bg-pink-600 hover:bg-pink-700 text-white py-3 px-4 rounded-lg transition font-medium">
+                    Book Now
+                </button>
+            </div>
+        </div>
+
+        <!-- Plan Comparison -->
+        <div class="mt-16 bg-gradient-to-br from-indigo-900/50 to-purple-900/50 rounded-2xl p-8 backdrop-blur-md border border-indigo-500/20">
+            <h2 class="text-2xl font-bold mb-6 text-center">Plan Comparison</h2>
+            <div class="overflow-x-auto">
+                <table class="w-full">
+                    <thead>
+                        <tr class="border-b border-indigo-500/30">
+                            <th class="text-left pb-4">Features</th>
+                            <th class="text-center pb-4">Cosmic Premium</th>
+                            <th class="text-center pb-4">Cosmic Nourishment</th>
+                            <th class="text-center pb-4">Cosmic Guidance</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-indigo-500/30">
+                        <tr>
+                            <td class="py-4">Personalized Meal Plans</td>
+                            <td class="text-center"><i data-feather="check" class="text-green-400 mx-auto"></i></td>
+                            <td class="text-center"><i data-feather="check" class="text-green-400 mx-auto"></i></td>
+                            <td class="text-center"><i data-feather="x" class="text-red-400 mx-auto"></i></td>
+                        </tr>
+                        <tr>
+                            <td class="py-4">Exercise Plans</td>
+                            <td class="text-center"><i data-feather="check" class="text-green-400 mx-auto"></i></td>
+                            <td class="text-center"><i data-feather="x" class="text-red-400 mx-auto"></i></td>
+                            <td class="text-center"><i data-feather="x" class="text-red-400 mx-auto"></i></td>
+                        </tr>
+                        <tr>
+                            <td class="py-4">Meal Delivery</td>
+                            <td class="text-center"><i data-feather="x" class="text-red-400 mx-auto"></i></td>
+                            <td class="text-center"><i data-feather="check" class="text-green-400 mx-auto"></i></td>
+                            <td class="text-center"><i data-feather="x" class="text-red-400 mx-auto"></i></td>
+                        </tr>
+                        <tr>
+                            <td class="py-4">Nutritionist Consultation</td>
+                            <td class="text-center">Group Q&A</td>
+                            <td class="text-center"><i data-feather="x" class="text-red-400 mx-auto"></i></td>
+                            <td class="text-center"><i data-feather="check" class="text-green-400 mx-auto"></i></td>
+                        </tr>
+                        <tr>
+                            <td class="py-4">Community Access</td>
+                            <td class="text-center"><i data-feather="check" class="text-green-400 mx-auto"></i></td>
+                            <td class="text-center"><i data-feather="x" class="text-red-400 mx-auto"></i></td>
+                            <td class="text-center"><i data-feather="x" class="text-red-400 mx-auto"></i></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </main>
+
+    <custom-footer></custom-footer>
+
+    <script src="components/navbar.js"></script>
+    <script src="components/footer.js"></script>
+    <script src="script.js"></script>
+    <script>
+        feather.replace();
+        VANTA.STARS({
+            el: "#vanta-bg",
+            mouseControls: true,
+            touchControls: true,
+            gyroControls: false,
+            minHeight: 200.00,
+            minWidth: 200.00,
+            scale: 1.00,
+            scaleMobile: 1.00,
+            color: 0x6d4b77,
+            backgroundColor: 0x0
+        });
+    </script>
+</body>
+</html>

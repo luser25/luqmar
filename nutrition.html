@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nutrition Guide | Luqmar</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.stars.min.js"></script>
+</head>
+<body class="min-h-screen text-white overflow-x-hidden">
+    <div id="vanta-bg"></div>
+    <custom-navbar></custom-navbar>
+    
+    <main class="container mx-auto px-4 py-16 relative z-10">
+        <h1 class="text-4xl font-bold mb-8 text-center">Cosmic Nutrition Guide</h1>
+        
+        <!-- Phase Selector -->
+        <div class="bg-gradient-to-br from-indigo-900/50 to-purple-900/50 rounded-2xl p-6 backdrop-blur-md border border-indigo-500/20 mb-12">
+            <h2 class="text-2xl font-bold mb-4">Your Current Phase</h2>
+            <div class="flex flex-wrap gap-2" id="phase-selector">
+                <button class="phase-btn bg-purple-600 px-4 py-2 rounded-full font-medium transition-all duration-300 opacity-100 active-phase" data-phase="menstrual">Menstrual</button>
+                <button class="phase-btn bg-blue-600 px-4 py-2 rounded-full font-medium transition-all duration-300 opacity-70" data-phase="follicular">Follicular</button>
+                <button class="phase-btn bg-pink-600 px-4 py-2 rounded-full font-medium transition-all duration-300 opacity-70" data-phase="ovulation">Ovulation</button>
+                <button class="phase-btn bg-yellow-600 px-4 py-2 rounded-full font-medium transition-all duration-300 opacity-70" data-phase="luteal">Luteal</button>
+            </div>
+</div>
+        
+        <!-- Nutrition Recommendations -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <!-- Foods to Focus On -->
+            <div class="bg-gradient-to-br from-indigo-900/50 to-blue-900/50 rounded-2xl p-6 backdrop-blur-md border border-indigo-500/20">
+                <h2 class="text-2xl font-bold mb-4 flex items-center gap-2">
+                    <i data-feather="heart"></i> Nourish Your Body
+                </h2>
+            <div id="foods-to-focus">
+                    <div class="phase-content" data-phase="menstrual">
+<p class="mb-4">During your menstrual phase, focus on iron-rich foods to replenish what's lost:</p>
+                        <ul class="space-y-2">
+                            <li class="flex items-start gap-2"><i data-feather="check" class="text-green-400 mt-1"></i> <span>Dark leafy greens (spinach, kale)</span></li>
+                            <li class="flex items-start gap-2"><i data-feather="check" class="text-green-400 mt-1"></i> <span>Grass-fed red meat</span></li>
+                            <li class="flex items-start gap-2"><i data-feather="check" class="text-green-400 mt-1"></i> <span>Lentils and beans</span></li>
+                            <li class="flex items-start gap-2"><i data-feather="check" class="text-green-400 mt-1"></i> <span>Pumpkin seeds</span></li>
+                            <li class="flex items-start gap-2"><i data-feather="check" class="text-green-400 mt-1"></i> <span>Vitamin C-rich foods (bell peppers, citrus) to enhance iron absorption</span></li>
+                        </ul>
+                    </div>
+                    <div class="phase-content hidden" data-phase="follicular">
+<p class="mb-4">As your energy builds, focus on foods that support estrogen production:</p>
+                        <ul class="space-y-2">
+                            <li class="flex items-start gap-2"><i data-feather="check" class="text-green-400 mt-1"></i> <span>Cruciferous vegetables (broccoli, cauliflower)</span></li>
+                            <li class="flex items-start gap-2"><i data-feather="check" class="text-green-400 mt-1"></i> <span>Fermented foods (sauerkraut, kimchi)</span></li>
+                            <li class="flex items-start gap-2"><i data-feather="check" class="text-green-400 mt-1"></i> <span>Omega-3 rich foods (salmon, chia seeds)</span></li>
+                            <li class="flex items-start gap-2"><i data-feather="check" class="text-green-400 mt-1"></i> <span>Fresh sprouts</span></li>
+                            <li class="flex items-start gap-2"><i data-feather="check" class="text-green-400 mt-1"></i> <span>Complex carbs (quinoa, sweet potatoes)</span></li>
+                        </ul>
+                    </div>
+                    <div class="phase-content hidden" data-phase="ovulation">
+<p class="mb-4">During peak energy days, focus on vibrant, energizing foods:</p>
+                        <ul class="space-y-2">
+                            <li class="flex items-start gap-2"><i data-feather="check" class="text-green-400 mt-1"></i> <span>Colorful vegetables (bell peppers, carrots)</span></li>
+                            <li class="flex items-start gap-2"><i data-feather="check" class="text-green-400 mt-1"></i> <span>Lean proteins (chicken, turkey)</span></li>
+                            <li class="flex items-start gap-2"><i data-feather="check" class="text-green-400 mt-1"></i> <span>Raw nuts and seeds</span></li>
+                            <li class="flex items-start gap-2"><i data-feather="check" class="text-green-400 mt-1"></i> <span>Hydrating fruits (watermelon, berries)</span></li>
+                            <li class="flex items-start gap-2"><i data-feather="check" class="text-green-400 mt-1"></i> <span>Digestive enzymes (pineapple, papaya)</span></li>
+                        </ul>
+                    </div>
+                    <div class="phase-content hidden" data-phase="luteal">
+<p class="mb-4">As progesterone rises, focus on mood-balancing and grounding foods:</p>
+                        <ul class="space-y-2">
+                            <li class="flex items-start gap-2"><i data-feather="check" class="text-green-400 mt-1"></i> <span>Magnesium-rich foods (dark chocolate, almonds)</span></li>
+                            <li class="flex items-start gap-2"><i data-feather="check" class="text-green-400 mt-1"></i> <span>B-vitamin sources (eggs, nutritional yeast)</span></li>
+                            <li class="flex items-start gap-2"><i data-feather="check" class="text-green-400 mt-1"></i> <span>Healthy fats (avocados, olive oil)</span></li>
+                            <li class="flex items-start gap-2"><i data-feather="check" class="text-green-400 mt-1"></i> <span>Root vegetables (beets, carrots)</span></li>
+                            <li class="flex items-start gap-2"><i data-feather="check" class="text-green-400 mt-1"></i> <span>Herbal teas (chamomile, raspberry leaf)</span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Foods to Avoid -->
+            <div class="bg-gradient-to-br from-purple-900/50 to-indigo-900/50 rounded-2xl p-6 backdrop-blur-md border border-purple-500/20">
+                <h2 class="text-2xl font-bold mb-4 flex items-center gap-2">
+                    <i data-feather="x-circle"></i> Cosmic Cautions
+                </h2>
+            <div id="foods-to-avoid">
+                    <div class="phase-content" data-phase="menstrual">
+<p class="mb-4">During your period, avoid these inflammation triggers:</p>
+                        <ul class="space-y-2">
+                            <li class="flex items-start gap-2"><i data-feather="x" class="text-red-400 mt-1"></i> <span>Processed sugar</span></li>
+                            <li class="flex items-start gap-2"><i data-feather="x" class="text-red-400 mt-1"></i> <span>Dairy products</span></li>
+                            <li class="flex items-start gap-2"><i data-feather="x" class="text-red-400 mt-1"></i> <span>Caffeine</span></li>
+                            <li class="flex items-start gap-2"><i data-feather="x" class="text-red-400 mt-1"></i> <span>Alcohol</span></li>
+                            <li class="flex items-start gap-2"><i data-feather="x" class="text-red-400 mt-1"></i> <span>Processed meats</span></li>
+                        </ul>
+                    </div>
+                    <div class="phase-content hidden" data-phase="follicular">
+                        <p class="mb-4">While your energy builds, minimize these estrogen disruptors:</p>
+                        <ul class="space-y-2">
+                            <li class="flex items-start gap-2"><i data-feather="x" class="text-red-400 mt-1"></i> <span>Soy products (unless fermented)</span></li>
+                            <li class="flex items-start gap-2"><i data-feather="x" class="text-red-400 mt-1"></i> <span>Plastics (store food in glass)</span></li>
+                            <li class="flex items-start gap-2"><i data-feather="x" class="text-red-400 mt-1"></i> <span>Processed vegetable oils</span></li>
+                            <li class="flex items-start gap-2"><i data-feather="x" class="text-red-400 mt-1"></i> <span>Artificial sweeteners</span></li>
+                            <li class="flex items-start gap-2"><i data-feather="x" class="text-red-400 mt-1"></i> <span>Overcooked meats</span></li>
+                        </ul>
+                    </div>
+                    <div class="phase-content hidden" data-phase="ovulation">
+                        <p class="mb-4">During your fertile window, avoid these energy drainers:</p>
+                        <ul class="space-y-2">
+                            <li class="flex items-start gap-2"><i data-feather="x" class="text-red-400 mt-1"></i> <span>Heavy fried foods</span></li>
+                            <li class="flex items-start gap-2"><i data-feather="x" class="text-red-400 mt-1"></i> <span>Excess salt</span></li>
+                            <li class="flex items-start gap-2"><i data-feather="x" class="text-red-400 mt-1"></i> <span>Artificial additives</span></li>
+                            <li class="flex items-start gap-2"><i data-feather="x" class="text-red-400 mt-1"></i> <span>Raw sprouts (bacteria risk)</span></li>
+                            <li class="flex items-start gap-2"><i data-feather="x" class="text-red-400 mt-1"></i> <span>Undercooked eggs</span></li>
+                        </ul>
+                    </div>
+                    <div class="phase-content hidden" data-phase="luteal">
+                        <p class="mb-4">As PMS may approach, minimize these mood disruptors:</p>
+                        <ul class="space-y-2">
+                            <li class="flex items-start gap-2"><i data-feather="x" class="text-red-400 mt-1"></i> <span>Refined carbohydrates</span></li>
+                            <li class="flex items-start gap-2"><i data-feather="x" class="text-red-400 mt-1"></i> <span>Processed snacks</span></li>
+                            <li class="flex items-start gap-2"><i data-feather="x" class="text-red-400 mt-1"></i> <span>Excessive dairy</span></li>
+                            <li class="flex items-start gap-2"><i data-feather="x" class="text-red-400 mt-1"></i> <span>Energy drinks</span></li>
+                            <li class="flex items-start gap-2"><i data-feather="x" class="text-red-400 mt-1"></i> <span>Artificial food dyes</span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Recipe Suggestions -->
+        <div class="mt-12 bg-gradient-to-br from-indigo-900/50 to-purple-900/50 rounded-2xl p-6 backdrop-blur-md border border-indigo-500/20">
+            <h2 class="text-2xl font-bold mb-6">Cosmic Recipe Ideas</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="recipe-card" data-phase="menstrual">
+                    <img src="http://static.photos/food/320x240/1" alt="Iron-rich stew" class="w-full h-48 object-cover rounded-lg mb-3">
+                    <h3 class="font-bold text-lg">Iron-Boosting Stew</h3>
+                    <p class="text-sm text-gray-300">Perfect for replenishing during your period</p>
+                </div>
+                <div class="recipe-card" data-phase="follicular">
+                    <img src="http://static.photos/food/320x240/2" alt="Fermented salad" class="w-full h-48 object-cover rounded-lg mb-3">
+                    <h3 class="font-bold text-lg">Fermented Veggie Bowl</h3>
+                    <p class="text-sm text-gray-300">Supports estrogen balance</p>
+                </div>
+                <div class="recipe-card" data-phase="ovulation">
+                    <img src="http://static.photos/food/320x240/3" alt="Energy bowl" class="w-full h-48 object-cover rounded-lg mb-3">
+                    <h3 class="font-bold text-lg">Ovulation Power Bowl</h3>
+                    <p class="text-sm text-gray-300">Maximize your peak energy</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <custom-footer></custom-footer>
+
+    <script src="components/navbar.js"></script>
+    <script src="components/footer.js"></script>
+    <script src="script.js"></script>
+    <script>
+        feather.replace();
+        VANTA.STARS({
+            el: "#vanta-bg",
+            mouseControls: true,
+            touchControls: true,
+            gyroControls: false,
+            minHeight: 200.00,
+            minWidth: 200.00,
+            scale: 1.00,
+            scaleMobile: 1.00,
+            color: 0x6d4b77,
+            backgroundColor: 0x0
+        });
+        // Phase selection logic
+        document.addEventListener('DOMContentLoaded', function() {
+            const phaseBtns = document.querySelectorAll('.phase-btn');
+            const foodsToFocus = document.querySelectorAll('#foods-to-focus .phase-content');
+            const foodsToAvoid = document.querySelectorAll('#foods-to-avoid .phase-content');
+            const recipeCards = document.querySelectorAll('.recipe-card');
+
+            // Get current phase from stored data or default to menstrual
+            const userData = JSON.parse(localStorage.getItem('luqmarUserData')) || {};
+            const currentPhase = userData.currentPhase || 'menstrual';
+
+            // Show content for selected phase
+            function showPhase(phase) {
+                // Update foods to focus
+                foodsToFocus.forEach(content => {
+                    content.classList.toggle('hidden', content.dataset.phase !== phase);
+                });
+                
+                // Update foods to avoid
+                foodsToAvoid.forEach(content => {
+                    content.classList.toggle('hidden', content.dataset.phase !== phase);
+                });
+                
+                // Update recipe cards
+                recipeCards.forEach(card => {
+                    card.style.display = card.dataset.phase === phase ? 'block' : 'none';
+                });
+
+                // Update active button
+                phaseBtns.forEach(btn => {
+                    btn.classList.toggle('active-phase', btn.dataset.phase === phase);
+                    btn.classList.toggle('opacity-100', btn.dataset.phase === phase);
+                    btn.classList.toggle('opacity-70', btn.dataset.phase !== phase);
+                });
+            }
+
+            // Set initial phase
+            showPhase(currentPhase);
+
+            // Phase button click handlers
+            phaseBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const phase = this.dataset.phase;
+                    showPhase(phase);
+                    // Store selection
+                    if (userData) {
+                        userData.currentPhase = phase;
+                        localStorage.setItem('luqmarUserData', JSON.stringify(userData));
+                    }
+                });
+            });
+        });
+</script>
+</body>
+</html>

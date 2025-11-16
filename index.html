@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luqmar - Cosmic Cycle Tracker</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.stars.min.js"></script>
+</head>
+<body class="min-h-screen text-white overflow-x-hidden">
+    <div id="vanta-bg"></div>
+    <custom-navbar></custom-navbar>
+    <main class="relative z-10 h-screen w-screen overflow-x-hidden snap-x snap-mandatory">
+        <!-- Period Tracker Section -->
+        <section class="w-screen h-screen flex flex-col items-center justify-center snap-start px-4">
+            <div class="text-center mb-8">
+                <h1 class="text-5xl font-bold mb-4">Your Moon Cycle</h1>
+                <p class="text-xl text-purple-100">Track your flow with luqmar</p>
+            </div>
+
+            <div class="relative w-64 h-64 mb-8">
+                <!-- Moon Phase Visualization -->
+                <div class="absolute inset-0 rounded-full shadow-lg bg-gray-800 overflow-hidden">
+                    <div class="moon-phase w-full h-full" style="background: radial-gradient(circle at 30% 30%, transparent 60%, #6d4b77 60%)"></div>
+                </div>
+                <div class="absolute -bottom-4 left-1/2 transform -translate-x-1/2 bg-purple-900/80 px-4 py-2 rounded-full">
+                    <span id="current-phase-name">Waxing Crescent</span>
+                </div>
+            </div>
+
+            <div class="w-full max-w-md bg-indigo-900/50 rounded-2xl p-6 backdrop-blur-md border border-indigo-500/20">
+                <h2 class="text-2xl font-bold mb-4">Current Cycle</h2>
+                <div class="flex justify-between items-center mb-2">
+                    <span>Day <span id="current-cycle-day">7</span>/28</span>
+                    <span id="days-until-next">21 days until next cycle</span>
+                </div>
+                <div class="w-full bg-gray-700/50 rounded-full h-3 mb-4">
+                    <div id="cycle-progress" class="bg-purple-400 h-3 rounded-full" style="width: 25%"></div>
+                </div>
+                <button class="w-full bg-purple-600 hover:bg-purple-700 text-white py-2 px-4 rounded-lg transition">
+                    Log Today's Data
+                </button>
+            </div>
+        </section>
+
+        <!-- Community Section -->
+        <section class="w-screen h-screen snap-start bg-gradient-to-br from-indigo-900/50 to-purple-900/50 px-4 py-16">
+            <div class="max-w-4xl mx-auto">
+                <h2 class="text-3xl font-bold mb-6 text-center">Cosmic Community</h2>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                    <a href="/community.html" class="community-card">
+                        <div class="card-icon">
+                            <i data-feather="message-square"></i>
+                        </div>
+                        <h3>Discussion Forums</h3>
+                        <p>Share experiences and connect with others</p>
+                    </a>
+                    <a href="/qa.html" class="community-card">
+                        <div class="card-icon">
+                            <i data-feather="help-circle"></i>
+                        </div>
+                        <h3>Ask Questions</h3>
+                        <p>Get answers from our community</p>
+                    </a>
+                </div>
+
+                <div class="bg-indigo-900/30 backdrop-blur-md rounded-2xl p-6 border border-indigo-500/20">
+                    <h3 class="text-xl font-bold mb-4">Recent Discussions</h3>
+                    <div class="space-y-4">
+                        <div class="discussion-item">
+                            <div class="flex items-center gap-3 mb-2">
+                                <div class="w-8 h-8 rounded-full bg-purple-500/30 flex items-center justify-center">
+                                    <i data-feather="user"></i>
+                                </div>
+                                <span class="font-medium">MoonChild42</span>
+                                <span class="text-xs text-purple-200">2h ago</span>
+                            </div>
+                            <p class="text-sm">Has anyone tried moon phase yoga? Looking for recommendations!</p>
+                        </div>
+                        <div class="discussion-item">
+                            <div class="flex items-center gap-3 mb-2">
+                                <div class="w-8 h-8 rounded-full bg-purple-500/30 flex items-center justify-center">
+                                    <i data-feather="user"></i>
+                                </div>
+                                <span class="font-medium">StarryEyed</span>
+                                <span class="text-xs text-purple-200">5h ago</span>
+                            </div>
+                            <p class="text-sm">What are your favorite self-care rituals during menstruation?</p>
+                        </div>
+                    </div>
+                    <a href="/community.html" class="block text-center mt-6 text-purple-300 hover:text-purple-100 transition">
+                        View All Discussions <i data-feather="arrow-right" class="inline"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+<custom-footer></custom-footer>
+    <a href="/signup.html" class="fixed bottom-6 right-6 bg-purple-600 hover:bg-purple-700 text-white w-14 h-14 rounded-full flex items-center justify-center shadow-lg z-50">
+        <i data-feather="user-plus" class="w-6 h-6"></i>
+    </a>
+    <script src="components/navbar.js"></script>
+<script src="components/footer.js"></script>
+    <script src="script.js"></script>
+    <script>
+        feather.replace();
+        VANTA.STARS({
+            el: "#vanta-bg",
+            mouseControls: true,
+            touchControls: true,
+            gyroControls: false,
+            minHeight: 200.00,
+            minWidth: 200.00,
+            scale: 1.00,
+            scaleMobile: 1.00,
+            color: 0x8a46ff,
+            backgroundColor: 0x0
+        });
+    </script>
+<script src="https://deepsite.hf.co/deepsite-badge.js"></script>
+</body>
+</html>
